@@ -44,7 +44,7 @@ const onRefresh = () => {
 <style lang="scss" scoped>
 .index {
   width: auto;
-  height: auto;
+  height: 100%;
   .van-pull-refresh{
     width: auto;
     height: 100%;
