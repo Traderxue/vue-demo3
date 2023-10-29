@@ -1,3 +1,17 @@
+<script setup>
+import { useRouter } from "vue-router"
+
+const router = useRouter()
+
+const goWallet = () =>{
+  router.push("/wallet")
+}
+
+const goRecord = ()=>{
+  router.push("/record")
+}
+</script>
+
 <template>
   <div class="mine">
     <div class="header">
@@ -44,14 +58,14 @@
         </div>
         <span class="material-symbols-outlined"> arrow_forward_ios </span>
       </div>
-      <div class="box">
+      <div class="box" @click="goWallet">
         <div>
             <img src="@/assets/img/钱包_.png" alt="">
             <span>钱包</span>
         </div>
         <span class="material-symbols-outlined"> arrow_forward_ios </span>
       </div>
-      <div class="box">
+      <div class="box" @click="goRecord">
         <div>
             <img src="@/assets/img/记录_.png" alt="">
             <span>充值记录</span>

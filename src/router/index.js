@@ -21,13 +21,21 @@ const router = createRouter({
         },
         {
           path:"/mine",
-          component:()=>import("@/views/Mine/mine.vue")
+          component:()=>import("@/views/Mine/mine.vue"),
         }
       ]
     },
     {
       path:"/chart",
       component:()=>import("@/components/chart.vue")
+    },
+    {
+      path:"/wallet",
+      component:()=>import("@/views/Mine/components/wallet.vue")
+    },
+    {
+      path:"/record",
+      component:()=>import("@/views/Mine/components/record.vue")
     }
   ]
 })
