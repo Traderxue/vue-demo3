@@ -1,9 +1,23 @@
 <script setup>
 import { ref } from "vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter()
 
 const value = ref(10);
 
 const num = ref(0);
+
+const category = ref("BTC")
+
+const goChart = (type) =>{
+  router.push({
+    path:"/chart",
+    query: {
+      "type":category.value
+    }
+  })
+}
 </script>
 
 <template>
@@ -11,9 +25,9 @@ const num = ref(0);
     <div class="header">
       <div>
         <span class="material-symbols-outlined"> reorder </span>
-        <span class="type">BTC/USDT</span>
+        <span class="type">{{category}}/USDT</span>
       </div>
-      <span class="material-symbols-outlined"> leaderboard </span>
+      <span class="material-symbols-outlined" @click="goChart"> leaderboard </span>
     </div>
     <div class="box">
       <div class="left">
