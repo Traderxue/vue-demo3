@@ -4,16 +4,22 @@ import { ref } from "vue";
 const value = ref(10);
 
 const num = ref(0);
-
 </script>
 
 <template>
   <div class="trade">
+    <div class="header">
+      <div>
+        <span class="material-symbols-outlined"> reorder </span>
+        <span class="type">BTC/USDT</span>
+      </div>
+      <span class="material-symbols-outlined"> leaderboard </span>
+    </div>
     <div class="box">
       <div class="left">
-        <select >
-            <option value="市价">市价</option>
-            <option value="限价">限价</option>
+        <select>
+          <option value="市价">市价</option>
+          <option value="限价">限价</option>
         </select>
         <div>
           <p>杠杆倍数1-200</p>
@@ -27,23 +33,39 @@ const num = ref(0);
       </div>
       <div class="right">
         <div class="top">
-            <span>价格</span>
-            <span>数量</span>
+          <span>价格</span>
+          <span>数量</span>
         </div>
         <div class="main">
-            <div class="down">
-                <div><span style="color:#1fa58e">26495.36</span><span>0.16</span></div>
-                <div><span style="color:#1fa58e">26495.36</span><span>0.16</span></div>
-                <div><span style="color:#1fa58e">26495.36</span><span>0.16</span></div>
-                <div><span style="color:#1fa58e">26495.36</span><span>0.16</span></div>
+          <div class="down">
+            <div>
+              <span style="color: #1fa58e">26495.36</span><span>0.16</span>
             </div>
-            <span class="mid">29461.56</span>
-            <div class="up">
-                <div><span style="color:#e23e57">26495.36</span><span>0.16</span></div>
-                <div><span style="color:#e23e57">26495.36</span><span>0.16</span></div>
-                <div><span style="color:#e23e57">26495.36</span><span>0.16</span></div>
-                <div><span style="color:#e23e57">26495.36</span><span>0.16</span></div>
+            <div>
+              <span style="color: #1fa58e">26495.36</span><span>0.16</span>
             </div>
+            <div>
+              <span style="color: #1fa58e">26495.36</span><span>0.16</span>
+            </div>
+            <div>
+              <span style="color: #1fa58e">26495.36</span><span>0.16</span>
+            </div>
+          </div>
+          <span class="mid">29461.56</span>
+          <div class="up">
+            <div>
+              <span style="color: #e23e57">26495.36</span><span>0.16</span>
+            </div>
+            <div>
+              <span style="color: #e23e57">26495.36</span><span>0.16</span>
+            </div>
+            <div>
+              <span style="color: #e23e57">26495.36</span><span>0.16</span>
+            </div>
+            <div>
+              <span style="color: #e23e57">26495.36</span><span>0.16</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -56,6 +78,23 @@ const num = ref(0);
   height: 100%;
   background: #141919;
   padding: 15px;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    padding: 10px 0px;
+    div {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      .type {
+        font-size: 15px;
+        padding-left: 5px;
+        font-weight: 600;
+      }
+    }
+  }
   .box {
     display: flex;
     justify-content: space-between;
@@ -68,7 +107,7 @@ const num = ref(0);
       justify-content: space-between;
       flex-direction: column;
       box-sizing: border-box;
-      select{
+      select {
         height: 35px;
         width: auto;
         background: #1a2b45;
@@ -123,7 +162,7 @@ const num = ref(0);
     .right {
       width: 50%;
       padding: 10px 15px;
-      .top{
+      .top {
         width: auto;
         height: 15px;
         display: flex;
@@ -131,41 +170,41 @@ const num = ref(0);
         color: #fff;
         font-size: 14px;
       }
-      .main{
+      .main {
         width: auto;
         height: 100%;
         display: flex;
         justify-content: space-around;
         flex-direction: column;
         padding: 0px 10px;
-        .mid{
-            color: #1fa58e;
-            font-weight: 600;
-            font-size: 16px;
+        .mid {
+          color: #1fa58e;
+          font-weight: 600;
+          font-size: 16px;
         }
-        .up{
+        .up {
+          display: flex;
+          justify-content: space-around;
+          flex-direction: column;
+          div {
+            margin: 5px 0px;
             display: flex;
-            justify-content: space-around;
-            flex-direction: column;
-            div{
-                margin: 5px 0px;
-                display: flex;
-                justify-content: space-between;
-                font-size: 14px;
-                color: #fff;
-            }
+            justify-content: space-between;
+            font-size: 14px;
+            color: #fff;
+          }
         }
-        .down{
+        .down {
+          display: flex;
+          justify-content: space-around;
+          flex-direction: column;
+          div {
+            margin: 5px 0px;
             display: flex;
-            justify-content: space-around;
-            flex-direction: column;
-            div{
-                margin: 5px 0px;
-                display: flex;
-                justify-content: space-between;
-                font-size: 14px;
-                color: #fff;
-            }
+            justify-content: space-between;
+            font-size: 14px;
+            color: #fff;
+          }
         }
       }
     }

@@ -133,7 +133,7 @@
         font-weight: 600;
         border: 0;
         color: #FFF;
-        background: linear-gradient(to right bottom,#54E4B2,#F79560);
+        background: linear-gradient(to right,#54E4B2,#F79560);
     }
   }
 }
