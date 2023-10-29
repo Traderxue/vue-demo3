@@ -2,32 +2,81 @@
 import { ref } from "vue";
 import { useRouter } from "vue-router";
 
-const router = useRouter()
+const router = useRouter();
 
 const value = ref(10);
 
 const num = ref(0);
 
-const category = ref("BTC")
+const drawer = ref(false);
 
-const goChart = (type) =>{
+const category = ref("BTC");
+
+const direction = ref('ltr')
+
+const typeList = ref([
+  {
+    type:"ETH"
+  },
+  {
+    type:"DOGE"    
+  },
+  {
+    type:"APE"
+  },
+  {
+    type:"SOL"
+  },
+  {
+    type:"BNB"
+  },
+  {
+    type:"LINK"
+  },
+  {
+    type:"MATIC"
+  },
+  {
+    type:"SUSHIB"
+  }
+])
+
+const goChart = (type) => {
   router.push({
-    path:"/chart",
+    path: "/chart",
     query: {
-      "type":category.value
-    }
-  })
+      type: category.value,
+    },
+  });
+};
+
+const changeTab = () =>{
+  drawer.value = !drawer.value
 }
+
+const changeType = (item)=>{
+  category.value = item.type
+  drawer.value = !drawer.value
+}
+
+
 </script>
 
 <template>
   <div class="trade">
     <div class="header">
       <div>
-        <span class="material-symbols-outlined"> reorder </span>
-        <span class="type">{{category}}/USDT</span>
+        <el-drawer v-model="drawer" :with-header="false" :direction="direction">
+          <span v-for="(item,index) in typeList" :key="index" @click="changeType(item)">{{item.type}}/USDT</span>
+        </el-drawer>
+        <span class="material-symbols-outlined" @click="changeTab">
+          reorder
+        </span>
+        <span class="type">{{ category }}/USDT</span>
       </div>
-      <span class="material-symbols-outlined" @click="goChart"> leaderboard </span>
+      <span class="material-symbols-outlined" @click="goChart">
+        leaderboard
+      </span>
     </div>
     <div class="box">
       <div class="left">
@@ -220,6 +269,20 @@ const goChart = (type) =>{
             color: #fff;
           }
         }
+      }
+    }
+  }
+  ::v-deep(.el-drawer){
+    width: 40% !important;
+    background: #1a2b45 !important;
+    .el-drawer__body{
+      display: flex;
+      flex-direction: column;
+      span{
+        display: inline-block;
+        font-size: 14px;
+        padding: 15px 0px;
+        border-bottom: 1px solid gray;
       }
     }
   }

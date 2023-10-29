@@ -1,8 +1,47 @@
+<script setup>
+import { ref } from "vue";
+
+const drawer = ref(false);
+
+const direction = ref("ltr");
+
+const openDrawer = () => {
+  drawer.value = !drawer.value;
+};
+</script>
+
 <template>
   <div class="home">
     <div class="header">
+      <el-drawer v-model="drawer" :with-header="false" :direction="direction">
+        <div class="box">
+          <img src="@/assets/img/acvotor.png" alt="" />
+          <div class="drawer_span">
+            <span>登录</span>
+            <span>注册</span>
+          </div>
+          <div class="person">
+            <span class="material-symbols-outlined"> person </span>
+            <span>个人中心</span>
+          </div>
+          <div class="person">
+            <span class="material-symbols-outlined"> monitoring </span>
+            <span>交易中心</span>
+          </div>
+          <div class="person">
+            <span class="material-symbols-outlined"> language </span>
+            <span>语言</span>
+          </div>
+          <div class="person">
+            <span class="material-symbols-outlined"> settings </span>
+            <span>设置</span>
+          </div>
+        </div>
+      </el-drawer>
       <div class="header_left">
-        <span class="material-symbols-outlined"> link </span>
+        <span class="material-symbols-outlined" @click="openDrawer">
+          link
+        </span>
         <span>1562</span>
       </div>
       <span class="material-symbols-outlined"> chat </span>
@@ -39,10 +78,10 @@
       </div>
     </div>
     <div class="mainbox">
-        <p>2.36</p>
-        <span>CBF</span>
-        <img src="@/assets/img/bg_1.png" alt="">
-        <button>Harvest</button>
+      <p>2.36</p>
+      <span>CBF</span>
+      <img src="@/assets/img/bg_1.png" alt="" />
+      <button>Harvest</button>
     </div>
   </div>
 </template>
@@ -86,21 +125,21 @@
     display: flex;
     justify-content: space-around;
     padding: 10px;
-    div{
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        flex-direction: column;
-        text-align: center;
-        padding: 5px;
-        color: #3ed5b4;
-        img{
-            width: 25px;
-            height: 25px;
-        }
+    div {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      padding: 5px;
+      color: #3ed5b4;
+      img {
+        width: 25px;
+        height: 25px;
+      }
     }
   }
-  .mainbox{
+  .mainbox {
     width: auto;
     height: auto;
     padding: 15px;
@@ -109,31 +148,72 @@
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
-    p{
-        font-size: 18px;
-        font-weight: 600;
-        color: #FFF;
-        margin-bottom: 10px;
+    p {
+      font-size: 18px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 10px;
     }
-    span{
-        font-size: 14px;
-        color: #CCC;
-        font-weight: 600;
+    span {
+      font-size: 14px;
+      color: #ccc;
+      font-weight: 600;
     }
-    img{
-        width: 240px;
-        height: 240px;
+    img {
+      width: 240px;
+      height: 240px;
     }
-    button{
-        margin-top: 15px;
-        width: 200px;
+    button {
+      margin-top: 15px;
+      width: 200px;
+      height: 35px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 600;
+      border: 0;
+      color: #fff;
+      background: linear-gradient(to right, #54e4b2, #f79560);
+    }
+  }
+  ::v-deep(.el-drawer) {
+    width: 50% !important;
+    background: #1a2b45;
+    .box {
+      width: auto;
+      height: auto;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: column;
+      padding: 50px 0px;
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+      .drawer_span {
+        width: 100%;
         height: 35px;
-        border-radius: 20px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 5px 15px;
         font-size: 14px;
-        font-weight: 600;
-        border: 0;
-        color: #FFF;
-        background: linear-gradient(to right,#54E4B2,#F79560);
+        span {
+          color: #3ed5b4;
+        }
+      }
+      .person {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        box-sizing: border-box;
+        padding: 10px 10px;
+        span {
+          padding-right: 10px;
+        }
+      }
     }
   }
 }

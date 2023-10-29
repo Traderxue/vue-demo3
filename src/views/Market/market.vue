@@ -48,7 +48,7 @@ const listData = ref([
         up:1
     },
     {
-        type:"ETH",
+        type:"OKX",
         price:"44.16",
         parcent:"+2.36%",
         logo:"https://etherscan.io/token/images/okex_32.png",
