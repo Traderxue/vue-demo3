@@ -1,3 +1,13 @@
+<script setup>
+import { useRouter } from "vue-router"
+
+const router = useRouter()
+
+const register = ()=>{
+  router.push("/register")
+}
+</script>
+
 <template>
   <div class="login">
     <div class="title">
@@ -8,7 +18,7 @@
       <input type="text" placeholder="请输入密码" />
       <div>
         <button>登录</button>
-        <button>注册</button>
+        <button @click="register">注册</button>
       </div>
       <p>忘记密码？</p>
     </div>
@@ -43,6 +53,7 @@
       box-sizing: border-box;
       padding-left: 15px;
       font-size: 14px;
+      color: #555;
     }
     div {
         width: 60%;
