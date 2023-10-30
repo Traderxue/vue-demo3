@@ -23,7 +23,7 @@ const onRefresh = () => {
     <van-tabbar v-model="active" active-color="#3ED5B2" inactive-color="#CCC" route>
       <van-tabbar-item to="/home">
         <span class="material-symbols-outlined"> home </span><br />
-        <span>首页</span>
+        <span>{{$t('home.title')}}</span>
       </van-tabbar-item>
       <van-tabbar-item to="/market">
         <span class="material-symbols-outlined"> leaderboard </span><br />

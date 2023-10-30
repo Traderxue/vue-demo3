@@ -1,5 +1,8 @@
 <script setup>
 import { ref } from "vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter()
 
 const drawer = ref(false);
 
@@ -8,6 +11,18 @@ const direction = ref("ltr");
 const openDrawer = () => {
   drawer.value = !drawer.value;
 };
+
+const selectLang = ()=>{
+  router.push("/lang")
+}
+
+const goTrade = () =>{
+  router.push("/trade")
+}
+
+const goMine = () =>{
+  router.push("/mine")
+}
 </script>
 
 <template>
@@ -20,15 +35,15 @@ const openDrawer = () => {
             <span>登录</span>
             <span>注册</span>
           </div>
-          <div class="person">
+          <div class="person" @click="goMine">
             <span class="material-symbols-outlined"> person </span>
             <span>个人中心</span>
           </div>
-          <div class="person">
+          <div class="person" @click="goTrade">
             <span class="material-symbols-outlined"> monitoring </span>
             <span>交易中心</span>
           </div>
-          <div class="person">
+          <div class="person" @click="selectLang">
             <span class="material-symbols-outlined"> language </span>
             <span>语言</span>
           </div>
@@ -209,7 +224,9 @@ const openDrawer = () => {
         align-items: center;
         font-size: 14px;
         box-sizing: border-box;
-        padding: 10px 10px;
+        padding: 0px 10px;
+        margin: 10px 0px;
+        cursor: pointer;
         span {
           padding-right: 10px;
         }

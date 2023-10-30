@@ -36,6 +36,10 @@ const router = createRouter({
     {
       path:"/record",
       component:()=>import("@/views/Mine/components/record.vue")
+    },
+    {
+      path:"/lang",
+      component:()=>import("@/components/lang.vue")
     }
   ]
 })
