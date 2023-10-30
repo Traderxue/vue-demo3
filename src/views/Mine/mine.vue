@@ -68,7 +68,7 @@ const goRecord = ()=>{
       <div class="box" @click="goRecord">
         <div>
             <img src="@/assets/img/记录_.png" alt="">
-            <span>充值记录</span>
+            <span>开单记录</span>
         </div>
         <span class="material-symbols-outlined"> arrow_forward_ios </span>
       </div>

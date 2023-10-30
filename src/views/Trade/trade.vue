@@ -85,6 +85,10 @@ const changeType = (item) => {
   category.value = item.type;
   drawer.value = !drawer.value;
 };
+
+const allRecord = () =>{
+  router.push("/record")
+}
 </script>
 
 <template>
@@ -165,7 +169,7 @@ const changeType = (item) => {
     <div class="entrust">
       <div class="top">
         <span class="top_left">当前委托</span>
-        <div >
+        <div @click="allRecord">
           <span class="material-symbols-outlined"> summarize </span>
           <span>全部</span>
         </div>
