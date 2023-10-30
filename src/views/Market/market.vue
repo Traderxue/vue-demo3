@@ -88,7 +88,7 @@ const goChart = (item)=>{
 <style lang="scss" scoped>
 .market {
   width: auto;
-  height: 100%;
+  height: 100vh;
   padding: 15px;
   background: #141919;
   color: #fff;

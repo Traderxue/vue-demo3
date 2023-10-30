@@ -93,7 +93,7 @@ const goRecord = ()=>{
 <style lang="scss" scoped>
 .mine {
   width: auto;
-  height: 100%;
+  height: 100vh;
   background: #141919;
   padding: 15px;
   .header {
