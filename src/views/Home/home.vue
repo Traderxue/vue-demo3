@@ -65,7 +65,7 @@ const goMine = () =>{
         <span class="material-symbols-outlined" @click="openDrawer">
           link
         </span>
-        <span>1562</span>
+        <span>137xxx@qq.com</span>
       </div>
       <span class="material-symbols-outlined"> chat </span>
     </div>

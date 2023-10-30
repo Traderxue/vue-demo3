@@ -9,55 +9,64 @@ const listData = ref([
         type:"ETH",
         time:"2023/04/02 16:00:04",
         income:"0.03122",
-        balance:"0.012"
+        balance:"0.012",
+        up:1
     },
     {
         type:"BTC",
         time:"2023/04/02 16:00:04",
         income:"0.03122",
-        balance:"0.012"
+        balance:"0.012",
+        up:0
     },
     {
         type:"APE",
         time:"2023/04/02 16:00:04",
         income:"0.03122",
-        balance:"0.012"
+        balance:"0.012",
+        up:1
     },
     {
         type:"ETH",
         time:"2023/04/02 16:00:04",
         income:"0.03122",
-        balance:"0.012"
+        balance:"0.012",
+        up:1
     },
     {
         type:"BTC",
         time:"2023/04/02 16:00:04",
         income:"0.03122",
-        balance:"0.012"
+        balance:"0.012",
+        up:1
     },
     {
         type:"APE",
         time:"2023/04/02 16:00:04",
         income:"0.03122",
-        balance:"0.012"
+        balance:"0.012",
+        up:0
     },
     {
         type:"ETH",
         time:"2023/04/02 16:00:04",
         income:"0.03122",
-        balance:"0.012"
+        balance:"0.012",
+        up:1
     },
     {
         type:"BTC",
         time:"2023/04/02 16:00:04",
         income:"0.03122",
-        balance:"0.012"
+        balance:"0.012",
+        up:0
     },
     {
         type:"APE",
         time:"2023/04/02 16:00:04",
         income:"0.03122",
-        balance:"0.012"
+        balance:"0.012",
+        up:1
     },
 ])
 
@@ -84,7 +93,7 @@ const goBack = () =>{
             </div>
             <div>
                 <span>{{item.type}}USDT</span>
-                <span>{{item.income}}</span>
+                <span :class="item.up==1?'up':'down'">{{item.income}}</span>
             </div>
             <div>
                 <span>手续费</span>
@@ -134,6 +143,7 @@ const goBack = () =>{
             display: flex;
             justify-content: space-between;
             padding: 5px 0px;
+            font-weight: 600;
             .up{
                 color: #1fa58e;
             }
