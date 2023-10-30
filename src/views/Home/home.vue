@@ -8,6 +8,14 @@ const drawer = ref(false);
 
 const direction = ref("ltr");
 
+const login = ()=>{
+  router.push("/login")
+}
+
+const register = ()=>{
+  router.push("/register")
+}
+
 const openDrawer = () => {
   drawer.value = !drawer.value;
 };
@@ -32,8 +40,8 @@ const goMine = () =>{
         <div class="box">
           <img src="@/assets/img/acvotor.png" alt="" />
           <div class="drawer_span">
-            <span>登录</span>
-            <span>注册</span>
+            <span @click="login">登录</span>
+            <span @click="register">注册</span>
           </div>
           <div class="person" @click="goMine">
             <span class="material-symbols-outlined"> person </span>

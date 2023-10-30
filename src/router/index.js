@@ -40,6 +40,14 @@ const router = createRouter({
     {
       path:"/lang",
       component:()=>import("@/components/lang.vue")
+    },
+    {
+      path:"/login",
+      component:()=>import("@/views/Login/login.vue")      
+    },
+    {
+      path:"/register",
+      component:()=>import("@/views/Register/register.vue")
     }
   ]
 })
